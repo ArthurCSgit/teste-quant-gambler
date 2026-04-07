@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Collections;
 public class Baralho {
     List<Carta> cartas = new ArrayList<>();
 
@@ -15,5 +16,15 @@ public class Baralho {
         for (Carta c : cartas) {
             System.out.println(c);
         }
+    }
+    public void embaralhar() {
+        Collections.shuffle(cartas);
+    }
+    public Carta darCarta() {
+        if (cartas.isEmpty()) {
+            return null;
+        }
+        Carta cartaRetirada = cartas.remove (cartas.size() - 1);
+        return cartaRetirada;
     }
 }
