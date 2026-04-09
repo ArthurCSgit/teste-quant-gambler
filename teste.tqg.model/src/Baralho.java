@@ -22,5 +22,5 @@ public class Baralho {
         return cartaRetirada;
     }
     @Override
-    public String toString() { return "Baralho com " + cartas + " cartas" ; }
+    public String toString() { return "Baralho com " + cartas.size() + " cartas" ; }
 }
