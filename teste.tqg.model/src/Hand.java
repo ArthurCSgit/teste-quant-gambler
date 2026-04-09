@@ -12,6 +12,7 @@ public class Hand {
         }
     }
     public boolean temPar() {
+       if (cartas.size() < 2) {return false;}
        if (cartas.get(0).getValor() == cartas.get(1).getValor()) {return true;}
        return false;
     }
