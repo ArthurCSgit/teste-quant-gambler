@@ -11,4 +11,8 @@ public class Hand {
             System.out.println(m);
         }
     }
+    public boolean temPar() {
+       if (cartas.get(0).getValor() == cartas.get(1).getValor()) {return true;}
+       return false;
+    }
 }

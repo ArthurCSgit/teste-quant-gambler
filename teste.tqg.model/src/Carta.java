@@ -11,7 +11,9 @@ public class Carta {
         this.naipe = naipe;
         this.valor = valor;
     }
-
+    public Valor getValor() {
+        return valor;
+    }
     @Override
     public String toString() {
         return valor + " de " + naipe ;
