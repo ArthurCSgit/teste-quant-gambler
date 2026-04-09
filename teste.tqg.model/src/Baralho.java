@@ -11,12 +11,6 @@ public class Baralho {
             }
         }
     }
-
-    public void mostrarBaralho() {
-        for (Carta c : cartas) {
-            System.out.println(c);
-        }
-    }
     public void embaralhar() {
         Collections.shuffle(cartas);
     }
@@ -27,4 +21,6 @@ public class Baralho {
         Carta cartaRetirada = cartas.remove (cartas.size() - 1);
         return cartaRetirada;
     }
+    @Override
+    public String toString() { return "Baralho com " + cartas + " cartas" ; }
 }
