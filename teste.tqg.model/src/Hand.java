@@ -16,4 +16,9 @@ public class Hand {
        if (cartas.get(0).getValor() == cartas.get(1).getValor()) {return true;}
        return false;
     }
+    public boolean temTrinca() {
+        if (cartas.size() < 3) {return false;}
+        if ((cartas.get(0).getValor() == cartas.get(1).getValor()) && (cartas.get(1).getValor() == cartas.get(2).getValor())) {return true;}
+        return false;
+    }
 }
