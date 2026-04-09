@@ -11,13 +11,17 @@ public class Teste {
 //                minhaMao.receberCarta(carta_sorteada);
 //            }
 //        minhaMao.mostrarMao();
-        Carta c1 = new Carta(Carta.Naipe.COPAS, Carta.Valor.AS);
-        Carta c2 = new Carta(Carta.Naipe.PAUS, Carta.Valor.AS);
-        Carta c3 = new  Carta(Carta.Naipe.OUROS, Carta.Valor.QUATRO);
+        Carta c1 = new Carta(Carta.Naipe.COPAS, Carta.Valor.SETE);
+        Carta c2 = new Carta(Carta.Naipe.COPAS, Carta.Valor.QUATRO);
+        Carta c3 = new Carta(Carta.Naipe.COPAS, Carta.Valor.DOIS);
+        Carta c4 = new Carta(Carta.Naipe.COPAS, Carta.Valor.REI);
+        Carta c5 = new Carta(Carta.Naipe.OUROS, Carta.Valor.DEZ);
         Hand minhaMao = new Hand ();
         minhaMao.receberCarta(c1);
         minhaMao.receberCarta(c2);
         minhaMao.receberCarta(c3);
-        System.out.println("Tem trinca? " + minhaMao.temTrinca());
+        minhaMao.receberCarta(c4);
+        minhaMao.receberCarta(c5);
+        System.out.println("Tem flush? " + minhaMao.temFlush());
     }
 }

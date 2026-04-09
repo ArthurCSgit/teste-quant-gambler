@@ -21,4 +21,12 @@ public class Hand {
         if ((cartas.get(0).getValor() == cartas.get(1).getValor()) && (cartas.get(1).getValor() == cartas.get(2).getValor())) {return true;}
         return false;
     }
+    public boolean temFlush() {
+        if (cartas.size() != 5) {return false;}
+        Carta.Naipe naipeReferencia = cartas.get(0).getNaipe();
+            for  (Carta c : cartas) {
+                if (c.getNaipe() != naipeReferencia) {return false;}
+            }
+        return true;
+    }
 }
