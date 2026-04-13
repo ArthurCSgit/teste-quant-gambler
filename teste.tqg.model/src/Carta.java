@@ -1,6 +1,6 @@
 public class Carta implements Comparable<Carta> {
     public enum Naipe {
-        OUROS, ESPADAS, COPAS, PAUS;
+        COPAS, ESPADAS, OUROS, PAUS;
     }
     public enum Valor {
         DOIS, TRES, QUATRO, CINCO, SEIS, SETE, OITO, NOVE, DEZ, VALETE, DAMA, REI, AS;

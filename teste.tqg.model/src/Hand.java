@@ -29,12 +29,26 @@ public class Hand {
         return false;
     }
     public boolean temFlush() {
-        if (cartas.size() != 5) {return false;}
-        Carta.Naipe naipeReferencia = cartas.get(0).getNaipe();
-            for  (Carta c : cartas) {
-                if (c.getNaipe() != naipeReferencia) {return false;}
-            }
-        return true;
+        if (cartas.size() < 5) {return false;}
+        int qtdCopas = 0;
+        int qtdEspadas = 0;
+        int qtdOuros = 0;
+        int qtdPaus = 0;
+        for (int i =0; i < cartas.size(); i++) {
+            if (cartas.get(i).getNaipe() == Carta.Naipe.COPAS) {
+                qtdCopas++; }
+            else if (cartas.get(i).getNaipe() == Carta.Naipe.ESPADAS) {
+                    qtdEspadas++; }
+            else if (cartas.get(i).getNaipe() == Carta.Naipe.OUROS) {
+                        qtdOuros++; }
+            else if (cartas.get(i).getNaipe() == Carta.Naipe.PAUS) {
+                            qtdPaus++; }
+            if (qtdCopas >= 5) {return true;}
+            else if (qtdEspadas >= 5)  {return true;}
+            else if (qtdOuros >= 5)   {return true;}
+            else if (qtdPaus >= 5)  {return true;}
+        }
+        return false;
     }
 
 }
