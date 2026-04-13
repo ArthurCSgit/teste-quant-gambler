@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 public class Hand {
     List<Carta> cartas = new ArrayList<Carta>();
@@ -11,14 +12,20 @@ public class Hand {
             System.out.println(m);
         }
     }
+    public void ordenarMao() {
+        Collections.sort(cartas);
+    }
     public boolean temPar() {
-       if (cartas.size() < 2) {return false;}
-       if (cartas.get(0).getValor() == cartas.get(1).getValor()) {return true;}
-       return false;
+        for (int i = 0; i < cartas.size() - 1; i++) {
+            if ( cartas.get(i).getValor() == cartas.get(i + 1).getValor()) {return true;}
+        }
+        return false;
     }
     public boolean temTrinca() {
         if (cartas.size() < 3) {return false;}
-        if ((cartas.get(0).getValor() == cartas.get(1).getValor()) && (cartas.get(1).getValor() == cartas.get(2).getValor())) {return true;}
+        for (int i =0; i < cartas.size() - 2; i++) {
+            if ( cartas.get(i).getValor() == cartas.get(i + 2).getValor()) {return true;}
+        }
         return false;
     }
     public boolean temFlush() {
@@ -29,4 +36,5 @@ public class Hand {
             }
         return true;
     }
+
 }

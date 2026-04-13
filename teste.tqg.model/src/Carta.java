@@ -1,4 +1,4 @@
-public class Carta {
+public class Carta implements Comparable<Carta> {
     public enum Naipe {
         OUROS, ESPADAS, COPAS, PAUS;
     }
@@ -16,6 +16,10 @@ public class Carta {
     }
     public Naipe getNaipe() {
         return naipe;
+    }
+    @Override
+    public int compareTo(Carta outra) {
+        return this.getValor().compareTo(outra.getValor());
     }
     @Override
     public String toString() {
