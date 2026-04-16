@@ -2,20 +2,17 @@ import java.sql.SQLOutput;
 
 public class Teste {
     public static void main(String[] args) {
-//        Baralho meuBaralho = new Baralho();
-//        System.out.println(meuBaralho);
-//        meuBaralho.embaralhar();
-//        Hand minhaMao = new Hand();
-//            for (int i = 0; i < 2; i++) {
-//                Carta carta_sorteada = meuBaralho.darCarta();
-//                minhaMao.receberCarta(carta_sorteada);
-//            }
-//        minhaMao.mostrarMao();
+
+        System.out.println("--- INICIANDO TESTES ---");
+        //======================================================
+        //CENÁRIO 1: MÃO COM PAR (EX: DOIS ASES)
+        //======================================================
+
         Carta c1 = new Carta(Carta.Naipe.COPAS, Carta.Valor.SETE);
-        Carta c2 = new Carta(Carta.Naipe.OUROS, Carta.Valor.VALETE);
-        Carta c3 = new Carta(Carta.Naipe.COPAS, Carta.Valor.DOIS);
-        Carta c4 = new Carta(Carta.Naipe.ESPADAS, Carta.Valor.SEIS);
-        Carta c5 = new Carta(Carta.Naipe.PAUS, Carta.Valor.VALETE);
+        Carta c2 = new Carta(Carta.Naipe.OUROS, Carta.Valor.AS);
+        Carta c3 = new Carta(Carta.Naipe.COPAS, Carta.Valor.TRES);
+        Carta c4 = new Carta(Carta.Naipe.ESPADAS, Carta.Valor.DOIS);
+        Carta c5 = new Carta(Carta.Naipe.PAUS, Carta.Valor.DEZ);
         Carta c6 = new Carta(Carta.Naipe.OUROS, Carta.Valor.SEIS);
         Carta c7 = new Carta(Carta.Naipe.OUROS, Carta.Valor.QUATRO);
         Hand minhaMao = new Hand ();
@@ -26,7 +23,8 @@ public class Teste {
         minhaMao.receberCarta(c5);
         minhaMao.receberCarta(c6);
         minhaMao.receberCarta(c7);
-        minhaMao.ordenarMao();
-        System.out.println("Tem full house? " + minhaMao.temFullHouse());
+
+        boolean resultadoTeste1 = minhaMao.temPar();
+        System.out.println("Teste 1 (Tem Par? Esperado: false) -> " + resultadoTeste1);
     }
 }

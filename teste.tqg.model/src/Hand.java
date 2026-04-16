@@ -1,26 +1,40 @@
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Map;
+import java.util.HashMap;
+
 public class Hand {
     List<Carta> cartas = new ArrayList<Carta>();
 
     public void receberCarta(Carta cartaRecebida) {
         cartas.add(cartaRecebida);
     }
+
     public void mostrarMao() {
         for  (Carta m: cartas) {
             System.out.println(m);
         }
     }
+
     public void ordenarMao() {
         Collections.sort(cartas);
     }
-    public boolean temPar() {
-        for (int i = 0; i < cartas.size() - 1; i++) {
-            if ( cartas.get(i).getValor() == cartas.get(i + 1).getValor()) {return true;}
+
+    public Map<Carta.Valor, Integer> gerarMapaFrequencia() {
+        Map<Carta.Valor, Integer> frequencia = new HashMap<>();
+        for (Carta f: cartas) {
+            frequencia.put(f.getValor(), frequencia.getOrDefault(f.getValor(),0) + 1 );
         }
-        return false;
+        return frequencia;
     }
+
+    public boolean temPar() {
+        if (cartas.size() < 5) {return false;}
+        Map<Carta.Valor, Integer> mapa = gerarMapaFrequencia();
+        return mapa.containsValue(2);
+    }
+
     public boolean temTrinca() {
         if (cartas.size() < 3) {return false;}
         for (int i =0; i < cartas.size() - 2; i++) {
@@ -28,6 +42,7 @@ public class Hand {
         }
         return false;
     }
+
     public boolean temFlush() {
         if (cartas.size() < 5) {return false;}
         int qtdCopas = 0;
@@ -50,6 +65,7 @@ public class Hand {
         }
         return false;
     }
+
     public boolean temStraight() {
         if (cartas.size() < 5) {return false;}
 
@@ -69,6 +85,7 @@ public class Hand {
             }
         return false;
     }
+
     public boolean temQuadra() {
         if (cartas.size() < 5) {return false;}
         for (int i = 0; i < cartas.size() - 3; i++) {
@@ -76,6 +93,7 @@ public class Hand {
         }
         return false;
     }
+
     public boolean temFullHouse() {
         if (cartas.size() < 5) {
             return false;
