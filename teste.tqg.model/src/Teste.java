@@ -12,10 +12,10 @@ public class Teste {
 //            }
 //        minhaMao.mostrarMao();
         Carta c1 = new Carta(Carta.Naipe.COPAS, Carta.Valor.SETE);
-        Carta c2 = new Carta(Carta.Naipe.PAUS, Carta.Valor.QUATRO);
-        Carta c3 = new Carta(Carta.Naipe.COPAS, Carta.Valor.QUATRO);
+        Carta c2 = new Carta(Carta.Naipe.OUROS, Carta.Valor.VALETE);
+        Carta c3 = new Carta(Carta.Naipe.COPAS, Carta.Valor.DOIS);
         Carta c4 = new Carta(Carta.Naipe.ESPADAS, Carta.Valor.SEIS);
-        Carta c5 = new Carta(Carta.Naipe.ESPADAS, Carta.Valor.QUATRO);
+        Carta c5 = new Carta(Carta.Naipe.PAUS, Carta.Valor.VALETE);
         Carta c6 = new Carta(Carta.Naipe.OUROS, Carta.Valor.SEIS);
         Carta c7 = new Carta(Carta.Naipe.OUROS, Carta.Valor.QUATRO);
         Hand minhaMao = new Hand ();
@@ -27,6 +27,6 @@ public class Teste {
         minhaMao.receberCarta(c6);
         minhaMao.receberCarta(c7);
         minhaMao.ordenarMao();
-        System.out.println("Tem quadra? " + minhaMao.temQuadra());
+        System.out.println("Tem full house? " + minhaMao.temFullHouse());
     }
 }
