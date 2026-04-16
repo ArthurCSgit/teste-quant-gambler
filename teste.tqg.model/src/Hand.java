@@ -50,5 +50,23 @@ public class Hand {
         }
         return false;
     }
+    public boolean temStraight() {
+        if (cartas.size() < 5) {return false;}
 
+        int contador = 1;
+
+        for (int i = 0; i < cartas.size() - 1; i++) {
+            int v1 = cartas.get(i).getValor().ordinal();
+            int v2 = cartas.get(i + 1).getValor().ordinal();
+
+            if (v2 == v1 + 1) {contador++;
+                if (contador == 5) {return true;}
+            }
+            else if (v2 == v1) {}
+            else {
+                contador = 1;
+            }
+            }
+        return false;
+    }
 }
