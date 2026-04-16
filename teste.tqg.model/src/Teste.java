@@ -13,11 +13,11 @@ public class Teste {
 //        minhaMao.mostrarMao();
         Carta c1 = new Carta(Carta.Naipe.COPAS, Carta.Valor.SETE);
         Carta c2 = new Carta(Carta.Naipe.PAUS, Carta.Valor.QUATRO);
-        Carta c3 = new Carta(Carta.Naipe.COPAS, Carta.Valor.OITO);
+        Carta c3 = new Carta(Carta.Naipe.COPAS, Carta.Valor.QUATRO);
         Carta c4 = new Carta(Carta.Naipe.ESPADAS, Carta.Valor.SEIS);
-        Carta c5 = new Carta(Carta.Naipe.PAUS, Carta.Valor.CINCO);
+        Carta c5 = new Carta(Carta.Naipe.ESPADAS, Carta.Valor.QUATRO);
         Carta c6 = new Carta(Carta.Naipe.OUROS, Carta.Valor.SEIS);
-        Carta c7 = new Carta(Carta.Naipe.OUROS, Carta.Valor.DEZ);
+        Carta c7 = new Carta(Carta.Naipe.OUROS, Carta.Valor.QUATRO);
         Hand minhaMao = new Hand ();
         minhaMao.receberCarta(c1);
         minhaMao.receberCarta(c2);
@@ -27,6 +27,6 @@ public class Teste {
         minhaMao.receberCarta(c6);
         minhaMao.receberCarta(c7);
         minhaMao.ordenarMao();
-        System.out.println("Tem sequência? " + minhaMao.temStraight());
+        System.out.println("Tem quadra? " + minhaMao.temQuadra());
     }
 }
