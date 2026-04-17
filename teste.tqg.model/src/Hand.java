@@ -86,10 +86,8 @@ public class Hand {
 
     public boolean temQuadra() {
         if (cartas.size() < 5) {return false;}
-        for (int i = 0; i < cartas.size() - 3; i++) {
-            if (cartas.get(i).getValor() == cartas.get(i + 3).getValor()) {return true;}
-        }
-        return false;
+        Map<Carta.Valor, Integer> mapa = gerarMapaFrequencia();
+        return mapa.containsValue(4);
     }
 
     public boolean temFullHouse() {
