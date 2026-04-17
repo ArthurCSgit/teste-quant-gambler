@@ -8,11 +8,11 @@ public class Teste {
         //CENÁRIO 1: MÃO COM PAR (EX: DOIS ASES)
         //======================================================
 
-        Carta c1 = new Carta(Carta.Naipe.COPAS, Carta.Valor.VALETE);
-        Carta c2 = new Carta(Carta.Naipe.OUROS, Carta.Valor.AS);
+        Carta c1 = new Carta(Carta.Naipe.COPAS, Carta.Valor.NOVE);
+        Carta c2 = new Carta(Carta.Naipe.OUROS, Carta.Valor.NOVE);
         Carta c3 = new Carta(Carta.Naipe.COPAS, Carta.Valor.QUATRO);
-        Carta c4 = new Carta(Carta.Naipe.ESPADAS, Carta.Valor.AS);
-        Carta c5 = new Carta(Carta.Naipe.PAUS, Carta.Valor.AS);
+        Carta c4 = new Carta(Carta.Naipe.ESPADAS, Carta.Valor.DEZ);
+        Carta c5 = new Carta(Carta.Naipe.PAUS, Carta.Valor.NOVE);
         Carta c6 = new Carta(Carta.Naipe.OUROS, Carta.Valor.SEIS);
         Carta c7 = new Carta(Carta.Naipe.OUROS, Carta.Valor.QUATRO);
         Hand minhaMao = new Hand ();
@@ -24,7 +24,7 @@ public class Teste {
         minhaMao.receberCarta(c6);
         minhaMao.receberCarta(c7);
 
-        boolean resultadoTeste1 = minhaMao.temFullHouse();
+        boolean resultadoTeste1 = minhaMao.temDoisPares();
         System.out.println("Teste 1 (Tem trinca? Esperado: true) -> " + resultadoTeste1);
     }
 }

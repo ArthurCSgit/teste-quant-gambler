@@ -35,6 +35,17 @@ public class Hand {
         return mapa.containsValue(2);
     }
 
+    public boolean temDoisPares() {
+        if (cartas.size() < 5) {return false;}
+        int contadorPares = 0;
+        Map<Carta.Valor, Integer> mapa = gerarMapaFrequencia();
+        for (Integer f : mapa.values()) {
+            if (f == 2) {contadorPares++;}
+            if (contadorPares == 2) {return true;}
+        }
+        return false;
+    }
+
     public boolean temTrinca() {
         if (cartas.size() < 5) {return false;}
         Map<Carta.Valor, Integer> mapa = gerarMapaFrequencia();
