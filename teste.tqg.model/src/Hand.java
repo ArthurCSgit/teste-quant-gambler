@@ -94,21 +94,7 @@ public class Hand {
         if (cartas.size() < 5) {
             return false;
         }
-        int trinca = 0;
-        int par = 0;
-        Carta.Valor valorTrincaEncontrada = null;
-        for (int i = 0; i < cartas.size() - 2; i++) {
-            if (cartas.get(i).getValor() == cartas.get(i + 2).getValor()) {
-                trinca++;
-                valorTrincaEncontrada = cartas.get(i).getValor();
-            }
-        }
-        for (int i = 0; i < cartas.size() - 1; i++) {
-            if (cartas.get(i).getValor() == cartas.get(i + 1).getValor()) {
-                if (cartas.get(i).getValor() != valorTrincaEncontrada) {par++;}
-            }
-        }
-        if (trinca >= 1 && par >= 1) {return true;}
-        return false;
+        Map<Carta.Valor, Integer> mapa = gerarMapaFrequencia();
+        return mapa.containsValue(3) &&  mapa.containsValue(2);
     }
 }
