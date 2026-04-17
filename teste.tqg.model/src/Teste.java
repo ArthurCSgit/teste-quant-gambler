@@ -11,8 +11,8 @@ public class Teste {
         Carta c1 = new Carta(Carta.Naipe.COPAS, Carta.Valor.SETE);
         Carta c2 = new Carta(Carta.Naipe.OUROS, Carta.Valor.AS);
         Carta c3 = new Carta(Carta.Naipe.COPAS, Carta.Valor.TRES);
-        Carta c4 = new Carta(Carta.Naipe.ESPADAS, Carta.Valor.DOIS);
-        Carta c5 = new Carta(Carta.Naipe.PAUS, Carta.Valor.DEZ);
+        Carta c4 = new Carta(Carta.Naipe.ESPADAS, Carta.Valor.DAMA);
+        Carta c5 = new Carta(Carta.Naipe.PAUS, Carta.Valor.AS );
         Carta c6 = new Carta(Carta.Naipe.OUROS, Carta.Valor.SEIS);
         Carta c7 = new Carta(Carta.Naipe.OUROS, Carta.Valor.QUATRO);
         Hand minhaMao = new Hand ();
@@ -24,7 +24,7 @@ public class Teste {
         minhaMao.receberCarta(c6);
         minhaMao.receberCarta(c7);
 
-        boolean resultadoTeste1 = minhaMao.temPar();
-        System.out.println("Teste 1 (Tem Par? Esperado: false) -> " + resultadoTeste1);
+        boolean resultadoTeste1 = minhaMao.temTrinca();
+        System.out.println("Teste 1 (Tem trinca? Esperado: false) -> " + resultadoTeste1);
     }
 }

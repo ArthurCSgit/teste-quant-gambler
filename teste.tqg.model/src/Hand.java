@@ -36,11 +36,9 @@ public class Hand {
     }
 
     public boolean temTrinca() {
-        if (cartas.size() < 3) {return false;}
-        for (int i =0; i < cartas.size() - 2; i++) {
-            if ( cartas.get(i).getValor() == cartas.get(i + 2).getValor()) {return true;}
-        }
-        return false;
+        if (cartas.size() < 5) {return false;}
+        Map<Carta.Valor, Integer> mapa = gerarMapaFrequencia();
+        return mapa.containsValue(3);
     }
 
     public boolean temFlush() {
